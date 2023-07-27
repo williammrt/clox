@@ -1,7 +1,7 @@
 # Writing another interpreter in C++
 Base on [https://craftinginterpreters.com/contents.html](https://craftinginterpreters.com/contents.html) Part III. A Bytecode Virtual Machine
 
-- [ ] 14. Chunks of Bytecode
+- [x] 14. Chunks of Bytecode
 - [ ] 15. A Virtual Machine
 - [ ] 16. Scanning on Demand
 - [ ] 17. Compiling Expressions
