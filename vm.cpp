@@ -19,10 +19,6 @@ interpret_result virtual_machine::run() {
         switch (instruction) {
             case OP_CONSTANT: {
                 value constant = read_constant();
-                /*
-                print_value(constant);
-                std::cout << '\n';
-                */
                 push(constant);
                 break;
             }
@@ -94,4 +90,4 @@ void virtual_machine::binary_op(func op) {
     push(op(a,b));
 }
 
-};
+}

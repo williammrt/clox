@@ -2,8 +2,8 @@
 Base on [https://craftinginterpreters.com/contents.html](https://craftinginterpreters.com/contents.html) Part III. A Bytecode Virtual Machine
 
 - [x] 14. Chunks of Bytecode
-- [ ] 15. A Virtual Machine
-- [ ] 16. Scanning on Demand
+- [x] 15. A Virtual Machine
+- [x] 16. Scanning on Demand
 - [ ] 17. Compiling Expressions
 - [ ] 18. Types of Values
 - [ ] 19. Strings

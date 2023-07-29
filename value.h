@@ -9,6 +9,6 @@ using value = double;
 
 void print_value(value val);
 
-};
+}
 
 #endif

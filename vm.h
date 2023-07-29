@@ -64,6 +64,6 @@ private:
     void binary_op(func op);
 };
 
-};
+}
 
 #endif

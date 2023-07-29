@@ -38,6 +38,6 @@ private:
     int constant_instr(std::string name, uint8_t offset);
 };
 
-};
+}
 
 #endif

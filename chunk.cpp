@@ -28,4 +28,4 @@ int chunk::get_line(int offset) const {
     return lines[offset];
 }
 
-};
+}

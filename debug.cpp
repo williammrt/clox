@@ -64,4 +64,4 @@ int disassemble_chunk::constant_instr(std::string name, uint8_t offset) {
     return offset + 2;
 }
 
-};
+}
