@@ -1,4 +1,8 @@
 #include <iostream>
 #include "value.h"
 
-void clox::print_value(clox::value val) { std::cout << val; }
+namespace clox {
+
+void print_value(value val) { std::cout << val; }
+
+};

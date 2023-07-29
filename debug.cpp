@@ -2,7 +2,9 @@
 #include <iostream>
 #include "debug.h"
 
-clox::disassemble_chunk::disassemble_chunk(const clox::chunk& outer_chunk, std::string name)
+namespace clox {
+
+disassemble_chunk::disassemble_chunk(const chunk& outer_chunk, std::string name)
     :my_chunk {outer_chunk} {
 
     std::cout << "== " << name << " ==\n";
@@ -11,7 +13,7 @@ clox::disassemble_chunk::disassemble_chunk(const clox::chunk& outer_chunk, std::
     }
 }
 
-int clox::disassemble_chunk::disassemble_instr(int offset) {
+int disassemble_chunk::disassemble_instr(int offset) {
     std::cout << std::right << std::setfill('0') << std::setw(4) << offset << " ";
     // about setting precision:
     // https://stackoverflow.com/questions/530614/print-leading-zeros-with-c-output-operator
@@ -27,6 +29,16 @@ int clox::disassemble_chunk::disassemble_instr(int offset) {
     switch (instruction) {
         case OP_CONSTANT:
             return constant_instr("OP_CONSTANT", offset);
+        case OP_ADD:
+            return simple_instr("OP_ADD", offset);
+        case OP_SUBTRACT:
+            return simple_instr("OP_SUBTRACT", offset);
+        case OP_MULTIPLY:
+            return simple_instr("OP_MULTIPLY", offset);
+        case OP_DIVIDE:
+            return simple_instr("OP_DIVIDE", offset);
+        case OP_NEGATE:
+            return simple_instr("OP_NEGATE", offset);
         case OP_RETURN:
             return simple_instr("OP_RETURN", offset);
         default:
@@ -36,12 +48,12 @@ int clox::disassemble_chunk::disassemble_instr(int offset) {
     }
 }
 
-int clox::disassemble_chunk::simple_instr(std::string name, int offset) {
+int disassemble_chunk::simple_instr(std::string name, int offset) {
     std::cout << name << "\n";
     return offset + 1;
 }
 
-int clox::disassemble_chunk::constant_instr(std::string name, uint8_t offset) {
+int disassemble_chunk::constant_instr(std::string name, uint8_t offset) {
     uint8_t constant_pos = my_chunk.get_code(offset + 1);
     std::cout << std::left << std::setfill(' ') << std::setw(16) << name << " "
                 << std::right << std::setw(4) << static_cast<int>(constant_pos)
@@ -51,3 +63,5 @@ int clox::disassemble_chunk::constant_instr(std::string name, uint8_t offset) {
     std::cout << "'\n";
     return offset + 2;
 }
+
+};
